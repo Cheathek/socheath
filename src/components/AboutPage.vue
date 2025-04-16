@@ -164,10 +164,10 @@ export default {
         description: "As a recent Web Development graduate, I possess a foundational understanding of Web Development principles and a keen interest in front-end technologies. I am eager to apply my problem-solving abilities and collaborative spirit to contribute to innovative web solutions."
       },
       contactInfo: [
-        { icon: "pin-map", label: "Location", value: "New York, USA" },
+        { icon: "pin-map", label: "Location", value: "Sangkat Toeuk Thla, Khan Sen Sok, Phnom Penh, Cambodia." },
         { icon: "award", label: "Degree", value: "Associate Degree of Web Development" },
         { icon: "phone", label: "Phone", value: "+1 (123) 456-7890" },
-        { icon: "envelope", label: "Email", value: "youremail@example.com" },
+        { icon: "envelope", label: "Email", value: "admin@gmail.com" },
       ],
       technologies: [
         { name: "HTML5", icon: "bi bi-filetype-html", color: "danger" },
