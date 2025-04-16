@@ -6,14 +6,17 @@
         <p>Learn more about who I am and what I do</p>
       </div>
 
-      <div class="row align-items-center">
+      <div class="row align-items-stretch">
+        <!-- Image column (left) -->
         <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
-          <div class="position-relative">
-            <img src="../assets/profile.jpg" alt="About Me" class="img-fluid rounded-3 shadow-lg">
+          <div class="h-100 position-relative">
+            <img src="../assets/profile.jpg" alt="About Me"
+              class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg">
           </div>
         </div>
-        <div class="col-lg-7" data-aos="fade-left">
-          <div class="card border-0 shadow-sm rounded-3 p-4 bg-body-secondary">
+
+        <div class="col-lg-7" data-aos="fade-down">
+          <div class="card border-0 shadow-sm rounded-3 p-4 bg-body-secondary h-100">
             <span
               class="badge bg-primary bg-opacity-10 text-primary fw-semibold mb-3 align-self-start px-3 py-2 rounded-pill">
               Front-end Developer & UI/UX Designer
@@ -36,9 +39,9 @@
               </div>
             </div>
 
-            <div class="d-flex gap-3 pt-2">
+            <div class="d-flex gap-3 pt-2 mt-auto">
               <button @click.prevent="downloadCV"
-                class="btn bg-primary bg-opacity-25 border-primary border-opacity-25 backdrop-filter-blur hover-border-opacity-50 transition-all btn-sm px-4 py-2 rounded-pill d-flex align-items-center gap-2 mt-4">
+                class="btn bg-primary bg-opacity-25 border-primary border-opacity-25 backdrop-filter-blur hover-border-opacity-50 transition-all btn-sm px-4 py-2 rounded-pill d-flex align-items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                   class="d-inline-block">
                   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
@@ -166,8 +169,8 @@ export default {
       contactInfo: [
         { icon: "pin-map", label: "Location", value: "Sangkat Toeuk Thla, Khan Sen Sok, Phnom Penh, Cambodia." },
         { icon: "award", label: "Degree", value: "Associate Degree of Web Development" },
-        { icon: "phone", label: "Phone", value: "086 397 836" },
-        { icon: "envelope", label: "Email", value: "admin@gmail.com" },
+        { icon: "phone", label: "Phone", value: "+1 (123) 456-7890" },
+        { icon: "envelope", label: "Email", value: "youremail@example.com" },
       ],
       technologies: [
         { name: "HTML5", icon: "bi bi-filetype-html", color: "danger" },

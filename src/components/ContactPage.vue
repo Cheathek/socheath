@@ -12,32 +12,40 @@
         <p>Get in touch for collaborations or opportunities</p>
       </div>
 
-      <div class="row">
-        <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
-          <h3 class="mb-4">Let's Talk</h3>
-          <p class="mb-4">I'm open to freelance opportunities, full-time positions, and collaborations. Feel free to
-            reach out if you have a project in mind or just want to connect.</p>
-          <div class="contact-info">
-            <div class="d-flex mb-4" v-for="(item, index) in contactItems" :key="index">
-              <div class="d-flex align-items-center">
-                <div class="bg-primary bg-opacity-10 p-3 me-3 rounded-3">
-                  <i :class="`bi bi-${item.icon} text-primary fs-5`"></i>
-                </div>
-                <div>
-                  <h6 class="fw-bold mb-1">{{ item.title }}</h6>
-                  <p class="text-muted mb-0 small">{{ item.text }}</p>
+      <div class="row g-4 align-items-stretch">
+        <!-- Left Column - Contact Info -->
+        <div class="col-lg-5 col-md-12" data-aos="fade-right" data-aos-duration="800">
+          <div class="card border-0 shadow-sm h-100 d-flex flex-column bg-body-secondary">
+            <div class="card-body p-4 d-flex flex-column">
+              <h3 class="mb-4">Let's Talk</h3>
+              <p class="mb-4 flex-grow-1">
+                I'm open to freelance opportunities, full-time positions, and collaborations. Feel free to reach out if
+                you have a project in mind or just want to connect.
+              </p>
+              <div class="contact-info">
+                <div class="d-flex mb-4" v-for="(item, index) in contactItems" :key="index">
+                  <div class="d-flex align-items-center">
+                    <div class="bg-primary bg-opacity-10 p-3 me-3 rounded-3">
+                      <i :class="`bi bi-${item.icon} text-primary fs-5`"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1">{{ item.title }}</h6>
+                      <p class="text-muted mb-0 small">{{ item.text }}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-7" data-aos="fade-left">
-          <div class="card border-0 shadow-sm bg-body-tertiary">
-            <div class="card-body p-4">
+        <!-- Right Column - Contact Form -->
+        <div class="col-lg-7 col-md-12" data-aos="fade-up">
+          <div class="card border-0 shadow-sm h-100 d-flex flex-column bg-body-secondary">
+            <div class="card-body p-4 d-flex flex-column">
               <h3 class="mb-4">Send Message to <cite class="text-info">Telegram</cite></h3>
-              <form @submit.prevent="submitForm">
-                <div class="row g-3">
+              <form @submit.prevent="submitForm" class="flex-grow-1 d-flex flex-column">
+                <div class="row g-3 flex-grow-1">
                   <div class="col-md-6">
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="name" v-model="form.name" placeholder="Your Name"
@@ -53,20 +61,17 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="form-floating mb-3">
                   <input type="text" class="form-control" id="subject" v-model="form.subject" placeholder="Subject">
                   <label for="subject">Subject</label>
                 </div>
-
-                <div class="form-floating mb-3">
+                <div class="form-floating flex-grow-1 mb-3">
                   <textarea class="form-control" id="message" v-model="form.message" placeholder="Your Message"
-                    style="height: 90px" required></textarea>
+                    style="height: 120px" required></textarea>
                   <label for="message">Your Message</label>
                 </div>
-
-                <div class="d-flex justify-content-end mt-5">
-                  <button type="submit" class="btn btn-outline-primary btn-sm px-3" :disabled="isSubmitting">
+                <div class="d-flex justify-content-end mt-auto">
+                  <button type="submit" class="btn btn-outline-primary px-4" :disabled="isSubmitting">
                     <span v-if="isSubmitting" class="spinner-border spinner-border-sm me-2" role="status"></span>
                     {{ isSubmitting ? submittingText : buttonText }}
                   </button>
@@ -138,7 +143,7 @@ export default {
 
         this.alertTimeout = setTimeout(() => {
           this.showAlert = false;
-        }, 30000);
+        }, 3000);
       }
     },
 

@@ -28,7 +28,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="d-flex align-items-center ms-3">
+            <div class="d-flex align-items-center ms-3 ">
                 <div class="theme-toggle" @click.stop="toggleDarkMode">
                     <div class="toggle-track" :class="{ 'dark': darkMode }">
                         <div class="toggle-thumb" :class="{ 'dark': darkMode }">
@@ -108,60 +108,45 @@ export default {
 <style scoped>
 /* Navbar Styles */
 .navbar {
+    /* transition: all 0.3s ease; */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(33, 37, 41, 0.8) !important;
+    background-color: rgba(33, 37, 41, 0.8) !important; /* Semi-transparent dark background */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease;
 }
 
 /* Mobile Menu Styles */
 @media (max-width: 991.98px) {
     .navbar-collapse {
         position: fixed;
-        top: 56px;
+        top: 50px;
         left: 0;
         right: 0;
-        background-color: rgba(52, 58, 64, 0.98) !important;
+        bottom: 0;
+        background-color: rgba(52, 58, 64, 0.95) !important;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         z-index: 1000;
-        padding: 0 1rem;
-        max-height: 0;
+        padding: 1rem;
+        height: 0;
         opacity: 0;
         overflow: hidden;
-        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: height 0.3s ease, opacity 0.3s ease;
     }
 
     .navbar-collapse.show {
-        max-height: 300px;
+        height: calc(45vh - 55px);
         opacity: 1;
-        padding: 1rem;
-    }
-
-    .nav-item {
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .navbar-collapse.show .nav-item {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: calc(var(--i) * 0.1s);
     }
 
     .nav-link {
         padding: 0.75rem 1rem;
         border-radius: 0.25rem;
-        margin: 0.25rem 0;
-        transition: background-color 0.2s ease, transform 0.2s ease;
+        transition: background-color 0.2s ease;
     }
 
     .nav-link:hover {
         background-color: rgba(255, 255, 255, 0.1);
-        transform: translateX(5px);
     }
 }
 
@@ -199,22 +184,16 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .toggle-thumb.dark {
     transform: translateX(26px);
-    background-color: #6c757d;
 }
 
 .toggle-icon {
     font-size: 0.7rem;
-    color: white;
-    transition: transform 0.3s ease;
-}
-
-.toggle-thumb:hover .toggle-icon {
-    transform: scale(1.1);
+    color: #ffffff;
 }
 
 /* Navbar brand icon animation */

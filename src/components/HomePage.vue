@@ -1,8 +1,8 @@
 <template>
   <section class="min-vh-100 position-relative overflow-hidden bg-dark text-light">
     <div data-aos="fade" data-aos-duration="1000"
-      class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50">
-      <img src="../assets/img-bg.jpg" alt="Background" class="object-fit-cover w-100 h-100 opacity-25">
+      class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-25">
+      <img src="../assets/img-bg.jpg" alt="Background" class="object-fit-cover w-100 h-100">
     </div>
     <div class="container position-relative" style="z-index: 1;">
       <div class="row mt-5 align-items-center justify-content-start">
