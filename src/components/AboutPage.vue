@@ -169,8 +169,8 @@ export default {
       contactInfo: [
         { icon: "pin-map", label: "Location", value: "Sangkat Toeuk Thla, Khan Sen Sok, Phnom Penh, Cambodia." },
         { icon: "award", label: "Degree", value: "Associate Degree of Web Development" },
-        { icon: "phone", label: "Phone", value: "+1 (123) 456-7890" },
-        { icon: "envelope", label: "Email", value: "youremail@example.com" },
+        { icon: "phone", label: "Phone", value: "012 739 866" },
+        { icon: "envelope", label: "Email", value: "admin@gmail.com" },
       ],
       technologies: [
         { name: "HTML5", icon: "bi bi-filetype-html", color: "danger" },
