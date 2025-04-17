@@ -114,7 +114,7 @@
                     </div>
                     <div class="flex-grow-1 ms-4">
                       <h5>Responsive & Accessible</h5>
-                      <p class="text-muted"style="text-align: justify; word-spacing: -0.1em;">
+                      <p class="text-muted" style="text-align: justify; word-spacing: -0.1em;">
                         I have a keen understanding of responsive design principles and always strive to create
                         accessible, inclusive websites that anyone can use, regardless of device or ability.
                         Whether working solo or as part of a team, I am committed to producing top-notch
