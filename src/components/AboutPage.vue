@@ -92,7 +92,7 @@
                     </div>
                     <div class="flex-grow-1 ms-4">
                       <h5>Creativity Meets Logic</h5>
-                      <p class="text-muted">
+                      <p class="text-muted" style="text-align: justify; word-spacing: -0.1em; ">
                         Web development excites me because it allows me to combine creativity with logic.
                         From concept to deployment, the entire process of transforming an idea into a live,
                         interactive website or application gives me a sense of accomplishment and pride.
@@ -114,7 +114,7 @@
                     </div>
                     <div class="flex-grow-1 ms-4">
                       <h5>Responsive & Accessible</h5>
-                      <p class="text-muted">
+                      <p class="text-muted"style="text-align: justify; word-spacing: -0.1em;">
                         I have a keen understanding of responsive design principles and always strive to create
                         accessible, inclusive websites that anyone can use, regardless of device or ability.
                         Whether working solo or as part of a team, I am committed to producing top-notch
