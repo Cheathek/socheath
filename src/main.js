@@ -1,39 +1,26 @@
-// import { createApp } from 'vue'
-// import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap/dist/js/bootstrap.js";
-
-// // import 'aos/dist/aos.css'
-// import App from './App.vue'
-// import router from './router'
-
-// createApp(App)
-//     .use(router)
-//     .mount('#app')
-
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 
-// Import Bootstrap CSS and JS
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
-// Import AOS CSS and JS
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
 const app = createApp(App);
 
-// Use Vue Router
 app.use(router);
 
-// Initialize AOS
-app.config.globalProperties.$aos = AOS;
-app.use(AOS.init({
-  duration: 800, // Duration of animations
-  easing: 'ease-in-out', // Easing type
-  once: true, // Animations only happen once
-}));
+AOS.init({
+  // delay: 50,
+  // anchorPlacement: 'top-bottom',
+  offset: 120,
+  duration: 800,
+  easing: 'ease-in-out',
+  once: false,
+});
 
-// Mount the app
+app.config.globalProperties.$aos = AOS;
+
 app.mount('#app');

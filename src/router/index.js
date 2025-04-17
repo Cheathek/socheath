@@ -1,5 +1,6 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
+import AOS from 'aos';
 import HomePage from '../components/HomePage.vue'
 import AboutPage from '../components/AboutPage.vue'
 import SkillsPage from '../components/SkillsPage.vue'
@@ -39,7 +40,19 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      return { top: 0 };
+    }
+  },
+});
+router.afterEach(() => {
+  AOS.refresh();
+});
 
 export default router
