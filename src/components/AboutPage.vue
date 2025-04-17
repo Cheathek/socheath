@@ -15,7 +15,7 @@
           </div>
         </div>
 
-        <div class="col-lg-7" data-aos="fade-down">
+        <div class="col-lg-7" data-aos="fade-up">
           <div class="card border-0 shadow-sm rounded-3 p-4 bg-body-secondary h-100">
             <span
               class="badge bg-primary bg-opacity-10 text-primary fw-semibold mb-3 align-self-start px-3 py-2 rounded-pill">
@@ -82,44 +82,53 @@
               <div class="row g-4">
                 <!-- First Philosophy Point -->
                 <div class="col-md-6">
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <div
-                        class="bg-primary bg-opacity-10 p-3 rounded-4 d-flex align-items-center justify-content-center"
-                        style="width: 64px; height: 64px;">
-                        <i class="bi bi-lightbulb text-primary fs-3"></i>
+                  <div class="card border-0 h-100 shadow-sm">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <div
+                            class="bg-primary bg-opacity-10 p-3 rounded-4 d-flex align-items-center justify-content-center"
+                            style="width: 64px; height: 64px;">
+                            <i class="bi bi-lightbulb text-primary fs-3"></i>
+                          </div>
+                        </div>
+                        <div class="flex-grow-1 ms-4">
+                          <h5>Creativity Meets Logic</h5>
+                          <p class="text-muted" style="text-align: justify; word-spacing: -0.1em; ">
+                            Web development excites me because it allows me to combine creativity with logic.
+                            From concept to deployment, the entire process of transforming an idea into a live,
+                            interactive website or application gives me a sense of accomplishment and pride.
+                            I thrive in environments that challenge me to learn new frameworks and languages
+                            while keeping up with industry trends.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="flex-grow-1 ms-4">
-                      <h5>Creativity Meets Logic</h5>
-                      <p class="text-muted" style="text-align: justify; word-spacing: -0.1em; ">
-                        Web development excites me because it allows me to combine creativity with logic.
-                        From concept to deployment, the entire process of transforming an idea into a live,
-                        interactive website or application gives me a sense of accomplishment and pride.
-                        I thrive in environments that challenge me to learn new frameworks and languages
-                        while keeping up with industry trends.
-                      </p>
                     </div>
                   </div>
                 </div>
 
                 <!-- Second Philosophy Point -->
                 <div class="col-md-6">
-                  <div class="d-flex">
-                    <div class="flex-shrink-0">
-                      <div class="bg-info bg-opacity-10 p-3 rounded-4 d-flex align-items-center justify-content-center"
-                        style="width: 64px; height: 64px;">
-                        <i class="bi bi-phone text-info fs-3"></i>
+                  <div class="card border-0 h-100 shadow-sm">
+                    <div class="card-body">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <div
+                            class="bg-info bg-opacity-10 p-3 rounded-4 d-flex align-items-center justify-content-center"
+                            style="width: 64px; height: 64px;">
+                            <i class="bi bi-phone text-info fs-3"></i>
+                          </div>
+                        </div>
+                        <div class="flex-grow-1 ms-4">
+                          <h5>Responsive & Accessible</h5>
+                          <p class="text-muted" style="text-align: justify; word-spacing: -0.1em;">
+                            I have a keen understanding of responsive design principles and always strive to create
+                            accessible, inclusive websites that anyone can use, regardless of device or ability.
+                            Whether working solo or as part of a team, I am committed to producing top-notch
+                            code and solutions that align with the latest web standards and industry best practices.
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div class="flex-grow-1 ms-4">
-                      <h5>Responsive & Accessible</h5>
-                      <p class="text-muted" style="text-align: justify; word-spacing: -0.1em;">
-                        I have a keen understanding of responsive design principles and always strive to create
-                        accessible, inclusive websites that anyone can use, regardless of device or ability.
-                        Whether working solo or as part of a team, I am committed to producing top-notch
-                        code and solutions that align with the latest web standards and industry best practices.
-                      </p>
                     </div>
                   </div>
                 </div>
