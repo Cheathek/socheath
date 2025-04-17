@@ -135,7 +135,7 @@ export default {
     }
 
     .navbar-collapse.show {
-        height: calc(45vh - 55px);
+        height: calc(32vh - 55px);
         opacity: 1;
     }
 
