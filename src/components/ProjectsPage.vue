@@ -12,7 +12,7 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" v-for="(project, index) in companyProjects" :key="'company-' + index"
             data-aos="fade-up" :data-aos-delay="index * 100" data-aos-duration="800">
-            <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card">
+            <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card overflow-hidden">
               <div class="position-relative overflow-hidden">
                 <img :src="project.image" class="card-img-top project-img" alt="Project Image">
                 <span class="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 small">
@@ -39,7 +39,7 @@
               <div class="card-body p-4 d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-start mb-2">
                   <h5 class="card-title fw-semibold mb-0">{{ project.title }}</h5>
-                  <span class="badge fw-semibold bg-light text-dark rounded-pill">{{ project.date }}</span>
+                  <span class="badge fw-semibold bg-secondary rounded-pill">{{ project.date }}</span>
                 </div>
                 <div class="mb-3">
                   <p class="card-text mb-1"><span class="fw-semibold text-primary">Purpose:</span> {{ project.purpose }}
@@ -67,7 +67,7 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" v-for="(project, index) in schoolProjects" :key="'school-' + index"
             data-aos="fade-up" :data-aos-delay="index * 100" data-aos-duration="800">
-            <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card">
+            <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card overflow-hidden">
               <div class="position-relative overflow-hidden">
                 <img :src="project.image" class="card-img-top project-img" alt="Project Image">
                 <span class="position-absolute top-0 end-0 bg-info text-white px-2 py-1 small">
@@ -95,7 +95,7 @@
               <div class="card-body p-4 d-flex flex-column">
                 <div class="d-flex justify-content-between align-items-start mb-2">
                   <h5 class="card-title fw-semibold mb-0">{{ project.title }}</h5>
-                  <span class="badge fw-semibold bg-light text-dark rounded-pill">{{ project.date }}</span>
+                  <span class="badge fw-semibold bg-secondary rounded-pill">{{ project.date }}</span>
                 </div>
                 <div class="mb-3">
                   <p class="card-text mb-1"><span class="fw-semibold text-info">Purpose:</span> {{ project.purpose }}</p>
@@ -127,44 +127,44 @@ export default {
       projects: [
         // Company Projects
         {
-          title: 'E-commerce Platform',
+          title: 'E-Commerce Platform',
           description: 'A fully responsive e-commerce site with product filtering, cart functionality, and user authentication.',
           date: 'Jan 2024 - Apr 2024',
-          company: 'IT Solution Digital',
+          company: 'IT Solution Digital (Internship)',
           purpose: 'Modernize client\'s online shopping experience to increase sales and user engagement',
           role: 'WordPress Developer',
           responsibility: 'Implemented responsive UI components and integration with payment gateways',
           image: 'https://media.istockphoto.com/id/583809524/photo/alberta-wilderness-near-banff.jpg?s=612x612&w=0&k=20&c=hiI3ib9ibDxAgqEZEH09EO3JOw94v5xh6hzcuXGhO-M=',
-          technologies: ['Vue.js', 'Vuex', 'Node.js', 'MongoDB', 'Laravel'],
+          technologies: ['WordPress'],
           demoLink: '#',
           codeLink: '#',
           type: 'company'
         },
         {
-          title: 'Task Management App',
+          title: 'Production System',
           description: 'A drag-and-drop task management application with team collaboration features.',
           date: 'Sep 2023 - Dec 2023',
-          company: 'Agile Dynamics',
+          company: 'Chhorn Chenda (CCD)',
           purpose: 'Improve internal team productivity and project tracking',
           role: 'Full-stack Developer',
           responsibility: 'Built drag-and-drop functionality and real-time updates using WebSockets',
           image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF9W9vwDNn5X7zAVeDHXgUKo0nBy0pqCaDcw&s',
-          technologies: ['React', 'Redux', 'Firebase'],
-          demoLink: null,
-          codeLink: '#',
+          technologies: ['Laravel', 'Vue.js'],
+          demoLink: 'http://143.198.206.150/',
+          codeLink: null,
           type: 'company'
         },
         // School Projects
         {
-          title: 'HTML Portfolio Project',
+          title: 'Web Design',
           description: 'A personal portfolio website showcasing skills and projects with a modern design.',
           date: 'Feb 2023 - Apr 2023',
-          institution: 'Tech Academy',
+          institution: 'PNC',
           purpose: 'Demonstrate web design skills and create a professional online presence',
           role: 'Solo Developer',
           responsibility: 'Designed and implemented all UI/UX elements and responsive layouts',
           image: 'https://t3.ftcdn.net/jpg/00/50/13/40/360_F_50134069_oESZdArAXu3vkoixTdtdAfvRNj0fuVmZ.jpg',
-          technologies: ['Vue.js', 'Bootstrap', 'GSAP'],
+          technologies: ['HTML', 'CSS', 'SASS'],
           demoLink: 'https://b6-sportclubs.vercel.app/',
           codeLink: null,
           type: 'school'
@@ -173,12 +173,12 @@ export default {
           title: 'Project Game',
           description: 'An interactive game project built with React and Firebase.',
           date: 'Oct 2022 - Dec 2022',
-          institution: 'Tech Academy',
+          institution: 'PNC',
           purpose: 'Apply game development concepts in a team-based project',
           role: 'Game Logic Developer',
           responsibility: 'Implemented core game mechanics and player interaction systems',
           image: 'https://d150u0abw3r906.cloudfront.net/wp-content/uploads/2021/10/image2-2.png',
-          technologies: ['React', 'Recipe API', 'Firebase'],
+          technologies: ['Algorithm'],
           demoLink: null,
           codeLink: 'https://github.com/SENRIN-SIM/game-project',
           type: 'school'
@@ -187,26 +187,26 @@ export default {
           title: 'Virtual Company I Project (CV1)',
           description: 'A POS system project built for small retail businesses.',
           date: 'Mar 2022 - May 2022',
-          institution: 'Tech Academy',
+          institution: 'PNC',
           purpose: 'Create a functional POS system with inventory management',
           role: 'Backend Developer',
           responsibility: 'Built database schema and implemented business logic',
           image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
-          technologies: ['PHP', 'MySQL', 'JavaScript'],
+          technologies: ['PHP', 'MySQL', 'HTML', 'CSS'],
           demoLink: 'https://github.com/naydany/G3-POS-SYSTEM',
           codeLink: null,
           type: 'school'
         },
         {
-          title: 'OOP Project',
+          title: 'OOP TypeScript Project',
           description: 'An airline reservation system built using OOP principles.',
           date: 'Mar 2022 - May 2022',
-          institution: 'Tech Academy',
+          institution: 'PNC',
           purpose: 'Apply object-oriented programming concepts to solve real-world problems',
           role: 'Lead Developer',
           responsibility: 'Designed class hierarchy and implemented core functionality',
           image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
-          technologies: ['C#', '.NET', 'SQL Server'],
+          technologies: ['TypeScript'],
           demoLink: 'https://github.com/Khav9/C-5-Airline',
           codeLink: null,
           type: 'school'
@@ -215,7 +215,7 @@ export default {
           title: 'Laravel Project',
           description: 'A social media integration platform using Facebook API.',
           date: 'Mar 2022 - May 2022',
-          institution: 'Tech Academy',
+          institution: 'PNC',
           purpose: 'Learn modern PHP frameworks and social API integration',
           role: 'API Specialist',
           responsibility: 'Implemented OAuth flows and API endpoint integration',
@@ -229,12 +229,12 @@ export default {
           title: 'Virtual Company II Project (VC2)',
           description: 'A salon management system with appointment booking and customer management.',
           date: 'Mar 2022 - May 2022',
-          institution: 'Tech Academy',
+          institution: 'PNC',
           purpose: 'Build a complete business management solution for service-based businesses',
           role: 'Frontend Lead',
           responsibility: 'Created user interfaces and implemented appointment scheduling system',
           image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
-          technologies: ['React', 'Node.js', 'MongoDB'],
+          technologies: ['Vue.js', 'Laravel', 'MySQL'],
           demoLink: 'https://github.com/vichhekachhen/G5-Penh-Jet-Salon',
           codeLink: null,
           type: 'school'
@@ -254,10 +254,7 @@ export default {
 </script>
 
 <style scoped>
-.project-card {
-  overflow: hidden;
-  /* border-radius: 0.30rem !important;  */
-}
+
 .project-img {
   height: 200px;
   object-fit: cover;
