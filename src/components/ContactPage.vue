@@ -45,9 +45,9 @@
             <div class="card-body p-4 d-flex flex-column">
               <h3 class="mb-4">Send Message to <cite class="text-info">Telegram</cite></h3>
               <form @submit.prevent="submitForm" class="flex-grow-1 d-flex flex-column">
-                <div class="row g-3 flex-grow-1">
+                <div class="row g-3">
                   <div class="col-md-6">
-                    <div class="form-floating mb-3">
+                    <div class="form-floating">
                       <input type="text" class="form-control" id="name" v-model="form.name" placeholder="Your Name"
                         required>
                       <label for="name">Your Name</label>
@@ -57,7 +57,7 @@
                     <div class="form-floating mb-3">
                       <input type="text" class="form-control" id="telegramUsername" v-model="form.telegramUsername"
                         placeholder="Telegram Username" required>
-                      <label for="telegramUsername">Your Telegram Username (without @)</label>
+                      <label for="telegramUsername">Telegram Username (without @)</label>
                     </div>
                   </div>
                 </div>

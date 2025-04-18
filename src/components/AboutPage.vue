@@ -194,8 +194,8 @@ export default {
   methods: {
     downloadCV() {
       const link = document.createElement('a');
-      link.href = '/resume.pdf';
-      link.setAttribute('download', 'resume.pdf');
+      link.href = '/socheathek-mao.pdf';
+      link.setAttribute('download', 'socheathek-mao.pdf');
       document.body.appendChild(link);
       link.click();
       link.remove();

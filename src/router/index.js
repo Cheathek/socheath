@@ -6,6 +6,7 @@ import AboutPage from '../components/AboutPage.vue'
 import SkillsPage from '../components/SkillsPage.vue'
 import ProjectsPage from '../components/ProjectsPage.vue'
 import ContactPage from '../components/ContactPage.vue'
+import NotFound from '../components/NotFound.vue';
 
 const routes = [
   {
@@ -35,6 +36,14 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactPage
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: '/notfound',
+    component: NotFound,
+    meta: {
+      hideFooter: true
+    }
   }
 ]
 
