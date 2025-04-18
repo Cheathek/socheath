@@ -1,8 +1,8 @@
 <template>
   <section id="project">
     <div class="container">
-      <div class="section-title" data-aos="fade-up" data-aos-duration="1200">
-        <h2>My Projects</h2>
+      <div class="section-title text-center mb-5" data-aos="fade-up" data-aos-duration="1200">
+        <h2 class="position-relative d-inline-block pb-3 mb-3">My Projects</h2>
         <p>Check out some of my recent work</p>
       </div>
 
@@ -12,12 +12,15 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" v-for="(project, index) in companyProjects" :key="'company-' + index"
             data-aos="fade-up" :data-aos-delay="index * 100" data-aos-duration="800">
-            <div class="card project-card border-0 shadow-sm bg-body-tertiary h-100">
+            <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card">
               <div class="position-relative overflow-hidden">
-                <img :src="project.image" class="card-img-top" alt="Project Image">
-                <span class="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 small rounded-bl">
+                <img :src="project.image" class="card-img-top project-img" alt="Project Image">
+                <span class="position-absolute top-0 end-0 bg-primary text-white px-2 py-1 small">
                   Professional
                 </span>
+                <div class="position-absolute top-0 start-0 py-2 px-3">
+                  <span class="company-badge text-white bg-primary p-1 rounded-pill px-3">{{ project.company }}</span>
+                </div>
                 <div class="card-img-overlay d-flex align-items-end p-0">
                   <div class="w-100 bg-dark bg-opacity-50 backdrop-filter-blur text-white p-2 translate-overlay">
                     <div class="d-flex justify-content-end">
@@ -33,12 +36,22 @@
                   </div>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ project.title }}</h5>
+              <div class="card-body p-4 d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title fw-semibold mb-0">{{ project.title }}</h5>
+                  <span class="badge fw-semibold bg-light text-dark rounded-pill">{{ project.date }}</span>
+                </div>
+                <div class="mb-3">
+                  <p class="card-text mb-1"><span class="fw-semibold text-primary">Purpose:</span> {{ project.purpose }}
+                  </p>
+                  <p class="card-text mb-1"><span class="fw-semibold text-primary">Role:</span> {{ project.role }}</p>
+                  <p class="card-text mb-1"><span class="fw-semibold text-primary">Responsibility:</span> {{
+                    project.responsibility }}</p>
+                </div>
                 <p class="card-text text-muted flex-grow-1">{{ project.description }}</p>
-                <div class="mt-2 mb-3">
+                <div class="mt-2 mb-2">
                   <span v-for="(tech, i) in project.technologies" :key="i"
-                    class="badge text-muted fw-normal me-2 mb-2 border border-primary tech-badge">
+                    class="badge rounded fw-semibold text-muted me-2 mb-2 border border-primary tech-badge">
                     {{ tech }}
                   </span>
                 </div>
@@ -54,14 +67,18 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-4" v-for="(project, index) in schoolProjects" :key="'school-' + index"
             data-aos="fade-up" :data-aos-delay="index * 100" data-aos-duration="800">
-            <div class="card project-card border-0 shadow-sm bg-body-tertiary h-100">
+            <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card">
               <div class="position-relative overflow-hidden">
-                <img :src="project.image" class="card-img-top" alt="Project Image">
-                <span class="position-absolute top-0 end-0 bg-info text-white px-2 py-1 small rounded-bl">
-                  Academic
+                <img :src="project.image" class="card-img-top project-img" alt="Project Image">
+                <span class="position-absolute top-0 end-0 bg-info text-white px-2 py-1 small">
+                  Academy
                 </span>
+                <div class="position-absolute top-0 start-0 py-2 px-3">
+                  <span class="institution-badge bg-info text-white p-1 rounded-pill px-3">{{ project.institution
+                    }}</span>
+                </div>
                 <div class="card-img-overlay d-flex align-items-end p-0">
-                  <div class="w-100 bg-dark bg-opacity-50 backdrop-filter-blur text-white p-2 text-white p-2 translate-overlay">
+                  <div class="w-100 bg-dark bg-opacity-50 backdrop-filter-blur text-white p-2 translate-overlay">
                     <div class="d-flex justify-content-end">
                       <a v-if="project.demoLink" :href="project.demoLink" class="btn btn-outline-light btn-sm me-2"
                         target="_blank">
@@ -75,12 +92,21 @@
                   </div>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">{{ project.title }}</h5>
+              <div class="card-body p-4 d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h5 class="card-title fw-semibold mb-0">{{ project.title }}</h5>
+                  <span class="badge fw-semibold bg-light text-dark rounded-pill">{{ project.date }}</span>
+                </div>
+                <div class="mb-3">
+                  <p class="card-text mb-1"><span class="fw-semibold text-info">Purpose:</span> {{ project.purpose }}</p>
+                  <p class="card-text mb-1"><span class="fw-semibold text-info">Role:</span> {{ project.role }}</p>
+                  <p class="card-text mb-1"><span class="fw-semibold text-info">Responsibility:</span> {{
+                    project.responsibility }}</p>
+                </div>
                 <p class="card-text text-muted flex-grow-1">{{ project.description }}</p>
-                <div class="mt-2 mb-3">
+                <div class="mt-2 mb-2">
                   <span v-for="(tech, i) in project.technologies" :key="i"
-                    class="badge text-muted fw-normal me-2 mb-2 border border-info tech-badge">
+                    class="badge rounded fw-semibold text-muted me-2 mb-2 border border-info tech-badge">
                     {{ tech }}
                   </span>
                 </div>
@@ -103,6 +129,11 @@ export default {
         {
           title: 'E-commerce Platform',
           description: 'A fully responsive e-commerce site with product filtering, cart functionality, and user authentication.',
+          date: 'Jan 2024 - Apr 2024',
+          company: 'IT Solution Digital',
+          purpose: 'Modernize client\'s online shopping experience to increase sales and user engagement',
+          role: 'WordPress Developer',
+          responsibility: 'Implemented responsive UI components and integration with payment gateways',
           image: 'https://media.istockphoto.com/id/583809524/photo/alberta-wilderness-near-banff.jpg?s=612x612&w=0&k=20&c=hiI3ib9ibDxAgqEZEH09EO3JOw94v5xh6hzcuXGhO-M=',
           technologies: ['Vue.js', 'Vuex', 'Node.js', 'MongoDB', 'Laravel'],
           demoLink: '#',
@@ -112,49 +143,102 @@ export default {
         {
           title: 'Task Management App',
           description: 'A drag-and-drop task management application with team collaboration features.',
+          date: 'Sep 2023 - Dec 2023',
+          company: 'Agile Dynamics',
+          purpose: 'Improve internal team productivity and project tracking',
+          role: 'Full-stack Developer',
+          responsibility: 'Built drag-and-drop functionality and real-time updates using WebSockets',
           image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF9W9vwDNn5X7zAVeDHXgUKo0nBy0pqCaDcw&s',
           technologies: ['React', 'Redux', 'Firebase'],
           demoLink: null,
           codeLink: '#',
           type: 'company'
         },
-        {
-          title: 'Social Media Dashboard',
-          description: 'An analytics dashboard for social media platforms with data visualization.',
-          image: 'https://d57439wlqx3vo.cloudfront.net/iblock/0c3/0c3f532171f9630c21d5a0eca17fd2dc/63efe2e15d66640b10d860b8e4de0d17.jpg',
-          technologies: ['Vue.js', 'D3.js', 'Express'],
-          demoLink: '#',
-          codeLink: null,
-          type: 'company'
-        },
         // School Projects
         {
-          title: 'Portfolio Website',
+          title: 'HTML Portfolio Project',
           description: 'A personal portfolio website showcasing skills and projects with a modern design.',
+          date: 'Feb 2023 - Apr 2023',
+          institution: 'Tech Academy',
+          purpose: 'Demonstrate web design skills and create a professional online presence',
+          role: 'Solo Developer',
+          responsibility: 'Designed and implemented all UI/UX elements and responsive layouts',
           image: 'https://t3.ftcdn.net/jpg/00/50/13/40/360_F_50134069_oESZdArAXu3vkoixTdtdAfvRNj0fuVmZ.jpg',
           technologies: ['Vue.js', 'Bootstrap', 'GSAP'],
-          demoLink: '#',
-          codeLink: '#',
+          demoLink: 'https://b6-sportclubs.vercel.app/',
+          codeLink: null,
           type: 'school'
         },
         {
-          title: 'Recipe Finder App',
-          description: 'A recipe application that allows users to search and save recipes based on ingredients.',
+          title: 'Project Game',
+          description: 'An interactive game project built with React and Firebase.',
+          date: 'Oct 2022 - Dec 2022',
+          institution: 'Tech Academy',
+          purpose: 'Apply game development concepts in a team-based project',
+          role: 'Game Logic Developer',
+          responsibility: 'Implemented core game mechanics and player interaction systems',
           image: 'https://d150u0abw3r906.cloudfront.net/wp-content/uploads/2021/10/image2-2.png',
           technologies: ['React', 'Recipe API', 'Firebase'],
-          demoLink: '#',
+          demoLink: null,
+          codeLink: 'https://github.com/SENRIN-SIM/game-project',
+          type: 'school'
+        },
+        {
+          title: 'Virtual Company I Project (CV1)',
+          description: 'A POS system project built for small retail businesses.',
+          date: 'Mar 2022 - May 2022',
+          institution: 'Tech Academy',
+          purpose: 'Create a functional POS system with inventory management',
+          role: 'Backend Developer',
+          responsibility: 'Built database schema and implemented business logic',
+          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
+          technologies: ['PHP', 'MySQL', 'JavaScript'],
+          demoLink: 'https://github.com/naydany/G3-POS-SYSTEM',
           codeLink: null,
           type: 'school'
         },
         {
-          title: 'WordPress Blog',
-          description: 'A blog built using WordPress with custom themes and plugins.',
+          title: 'OOP Project',
+          description: 'An airline reservation system built using OOP principles.',
+          date: 'Mar 2022 - May 2022',
+          institution: 'Tech Academy',
+          purpose: 'Apply object-oriented programming concepts to solve real-world problems',
+          role: 'Lead Developer',
+          responsibility: 'Designed class hierarchy and implemented core functionality',
           image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
-          technologies: ['WordPress', 'PHP', 'MySQL'],
-          demoLink: '#',
+          technologies: ['C#', '.NET', 'SQL Server'],
+          demoLink: 'https://github.com/Khav9/C-5-Airline',
           codeLink: null,
           type: 'school'
-        }
+        },
+        {
+          title: 'Laravel Project',
+          description: 'A social media integration platform using Facebook API.',
+          date: 'Mar 2022 - May 2022',
+          institution: 'Tech Academy',
+          purpose: 'Learn modern PHP frameworks and social API integration',
+          role: 'API Specialist',
+          responsibility: 'Implemented OAuth flows and API endpoint integration',
+          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
+          technologies: ['Laravel', 'Facebook API', 'MySQL'],
+          demoLink: 'https://github.com/Cheathek/Facebook-API-C-2',
+          codeLink: null,
+          type: 'school'
+        },
+        {
+          title: 'Virtual Company II Project (VC2)',
+          description: 'A salon management system with appointment booking and customer management.',
+          date: 'Mar 2022 - May 2022',
+          institution: 'Tech Academy',
+          purpose: 'Build a complete business management solution for service-based businesses',
+          role: 'Frontend Lead',
+          responsibility: 'Created user interfaces and implemented appointment scheduling system',
+          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
+          technologies: ['React', 'Node.js', 'MongoDB'],
+          demoLink: 'https://github.com/vichhekachhen/G5-Penh-Jet-Salon',
+          codeLink: null,
+          type: 'school'
+        },
       ]
     }
   },
@@ -171,27 +255,17 @@ export default {
 
 <style scoped>
 .project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  /* border-radius: 0.30rem !important;  */
 }
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-}
-
-.project-card img {
+.project-img {
   height: 200px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.project-card:hover img {
+.project-card:hover .project-img {
   transform: scale(1.05);
-}
-
-.card-body {
-  transition: background-color 0.3s ease;
 }
 
 .translate-overlay {
@@ -205,6 +279,7 @@ export default {
 
 .tech-badge {
   transition: all 0.3s ease;
+  padding: 0.4rem 0.8rem;
 }
 
 .tech-badge:hover {

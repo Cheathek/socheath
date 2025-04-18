@@ -28,18 +28,20 @@
               </span>
             </div>
             <div class="position-absolute top-0 end-0 p-2">
-              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill fw-semibold px-3">{{ category.experience }}</span>
+              <span class="badge bg-primary bg-opacity-10 text-primary rounded-pill fw-semibold px-3">{{
+                category.experience }}</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Programming Languages Section -->
-      <h3 class="mb-4 border-bottom pb-2 mt-5" data-aos="fade-up" data-aos-duration="1000">Programming Languages Level</h3>
+      <h3 class="mb-4 border-bottom pb-2 mt-5" data-aos="fade-up" data-aos-duration="1000">Programming Languages Level
+      </h3>
       <div class="row">
         <div class="col-lg-6 mb-4" v-for="(language, index) in programmingLanguages" :key="index" data-aos="fade-up"
           data-aos-duration="800" :data-aos-delay="index * 100">
-          <div class="card border-0 shadow-sm h-100 bg-body-secondary">
+          <div class="card border-0 shadow-sm h-100 bg-body-tertiary">
             <div class="card-body p-4">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <div class="d-flex align-items-center">
