@@ -21,10 +21,8 @@
               class="badge bg-primary bg-opacity-10 text-primary fw-semibold mb-3 align-self-start px-3 py-2 rounded-pill">
               Front-end Developer & UI/UX Designer
             </span>
-
             <p class="lead fw-semibold mb-4">{{ personalData.intro }}</p>
             <p class="text-muted mb-4">{{ personalData.description }}</p>
-
             <div class="row g-4 mb-4">
               <div class="col-md-6" v-for="(item, index) in contactInfo" :key="index">
                 <div class="d-flex align-items-center">
@@ -70,63 +68,35 @@
         </div>
       </div>
 
-      <!-- New Philosophy Cards Section -->
-      <div class="row mt-5 g-4" data-aos="fade-up" data-aos-delay="300">
+      <!-- Education Section -->
+      <div class="row mt-5" data-aos="fade-up" data-aos-delay="200">
         <div class="col-12">
           <div class="card border-0 shadow-sm rounded-4">
-            <div
-              class="card-header bg-primary bg-opacity-10 border-0 py-3 d-flex justify-content-between align-items-center">
-              <h5 class="mb-0 text-primary">My Development Philosophy</h5>
+            <div class="card-header bg-primary bg-opacity-10 border-0 py-3">
+              <h5 class="mb-0 text-primary">Education</h5>
             </div>
             <div class="card-body p-4 bg-body-secondary">
               <div class="row g-4">
-                <!-- First Philosophy Point -->
-                <div class="col-md-6">
-                  <div class="card border-0 h-100 shadow-sm">
-                    <div class="card-body">
-                      <div class="d-flex">
-                        <div class="flex-shrink-0">
-                          <div
-                            class="bg-primary bg-opacity-10 p-3 rounded-4 d-flex align-items-center justify-content-center"
-                            style="width: 64px; height: 64px;">
-                            <i class="bi bi-lightbulb text-primary fs-3"></i>
-                          </div>
-                        </div>
-                        <div class="flex-grow-1 ms-4">
-                          <h5>Creativity Meets Logic</h5>
-                          <p class="text-muted" style="text-align: justify; word-spacing: -0.1em; ">
-                            Web development excites me because it allows me to combine creativity with logic.
-                            From concept to deployment, the entire process of transforming an idea into a live,
-                            interactive website or application gives me a sense of accomplishment and pride.
-                            I thrive in environments that challenge me to learn new frameworks and languages
-                            while keeping up with industry trends.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Second Philosophy Point -->
-                <div class="col-md-6">
-                  <div class="card border-0 h-100 shadow-sm">
+                <div class="col-md-12" v-for="(edu, index) in education" :key="index">
+                  <div class="card border-0 h-100 shadow-sm" data-aos="fade-up">
                     <div class="card-body">
                       <div class="d-flex">
                         <div class="flex-shrink-0">
                           <div
                             class="bg-info bg-opacity-10 p-3 rounded-4 d-flex align-items-center justify-content-center"
                             style="width: 64px; height: 64px;">
-                            <i class="bi bi-phone text-info fs-3"></i>
+                            <i class="bi bi-mortarboard text-info fs-3"></i>
                           </div>
                         </div>
                         <div class="flex-grow-1 ms-4">
-                          <h5>Responsive & Accessible</h5>
-                          <p class="text-muted" style="text-align: justify; word-spacing: -0.1em;">
-                            I have a keen understanding of responsive design principles and always strive to create
-                            accessible, inclusive websites that anyone can use, regardless of device or ability.
-                            Whether working solo or as part of a team, I am committed to producing top-notch
-                            code and solutions that align with the latest web standards and industry best practices.
-                          </p>
+                          <div class="d-md-flex justify-content-between align-items-start mb-2">
+                            <h5 class="mb-1">{{ edu.degree }}</h5>
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">
+                              {{ edu.period }}
+                            </span>
+                          </div>
+                          <h6 class="text-muted mb-2">{{ edu.school }}</h6>
+                          <p class="mb-2">{{ edu.description }}</p>
                         </div>
                       </div>
                     </div>
@@ -137,7 +107,6 @@
           </div>
         </div>
       </div>
-
       <!-- Skills Preview Section -->
       <div class="row mt-5" data-aos="fade-up" data-aos-delay="600">
         <div class="col-12">
@@ -180,6 +149,21 @@ export default {
         { icon: "award", label: "Degree", value: "Associate Degree of Web Development" },
         { icon: "phone", label: "Phone", value: "012 739 866" },
         { icon: "envelope", label: "Email", value: "admin@gmail.com" },
+      ],
+      // New education array with sample data
+      education: [
+        {
+          degree: "Associate Degree of Web Development",
+          school: "University of Technology",
+          period: "2020 - 2022",
+          description: "Completed an intensive program focusing on front-end and back-end web development technologies, with emphasis on modern JavaScript frameworks and responsive design principles.",
+        },
+        {
+          degree: "High School Diploma",
+          school: "Sen Sok High School",
+          period: "2016 - 2020",
+          description: "Graduated with honors, with focus on Computer Science and Mathematics.",
+        }
       ],
       technologies: [
         { name: "HTML5", icon: "bi bi-filetype-html", color: "danger" },

@@ -26,7 +26,7 @@
                     <div class="d-flex justify-content-end">
                       <a v-if="project.demoLink" :href="project.demoLink" class="btn btn-outline-light btn-sm me-2"
                         target="_blank">
-                        <i class="bi bi-play me-1"></i>Demo
+                        <i class="bi bi-play-circle me-1"></i>Demo
                       </a>
                       <a v-if="project.codeLink" :href="project.codeLink" class="btn btn-outline-light btn-sm"
                         target="_blank">
@@ -69,7 +69,7 @@
             data-aos="fade-up" :data-aos-delay="index * 100" data-aos-duration="800">
             <div class="card h-100 border-0 shadow-sm bg-body-tertiary rounded-3 project-card overflow-hidden">
               <div class="position-relative overflow-hidden">
-                <img :src="project.image" class="card-img-top project-img" alt="Project Image">
+                <img :src="project.image" class="card-img-top project-img" alt="Project Image" loading="lazy">
                 <span class="position-absolute top-0 end-0 bg-info text-white px-2 py-1 small">
                   Academy
                 </span>
@@ -82,7 +82,7 @@
                     <div class="d-flex justify-content-end">
                       <a v-if="project.demoLink" :href="project.demoLink" class="btn btn-outline-light btn-sm me-2"
                         target="_blank">
-                        <i class="bi bi-play me-1"></i>Demo
+                        <i class="bi bi-play-circle me-1"></i>Demo
                       </a>
                       <a v-if="project.codeLink" :href="project.codeLink" class="btn btn-outline-light btn-sm"
                         target="_blank">
@@ -121,6 +121,17 @@
 </template>
 
 <script>
+//School project
+import webDesign from '../assets/school/webDesign.png';
+import game from '../assets/school/game.png';
+import pos from '../assets/school/pos.png'
+import plan from '../assets/school/air-plan.png'
+import penhjet from '../assets/school/penhjet.png'
+
+//company
+import itsolution from '../assets/company/itsolution.png'
+import ccd from '../assets/company/ccd.png'
+
 export default {
   name: 'Projects',
   data() {
@@ -129,13 +140,13 @@ export default {
         // Company Projects
         {
           title: 'Production System',
-          date: '1 Jan 2025 - Now',
-          company: 'Chhorn Chenda (CCD)',
-          purpose: 'N/A',
+          date: '25 Jan 2025 - Now',
+          company: 'Confidential',
+          purpose: 'Confidential',
           role: 'Full-stack Developer',
-          responsibility: 'N/A',
-          image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF9W9vwDNn5X7zAVeDHXgUKo0nBy0pqCaDcw&s',
-          technologies: ['Laravel', 'Vue.js'],
+          responsibility: 'Confidential',
+          image: ccd,
+          technologies: ['Laravel', 'Vue.js', 'MySQL', 'BoorstrapVue'],
           demoLink: 'http://143.198.206.150/',
           codeLink: null,
           type: 'company'
@@ -147,7 +158,7 @@ export default {
           purpose: 'Develop e-commerce website to sell all the accessory.',
           role: 'WordPress Developer',
           responsibility: 'Customized WordPress to align with branding and functional needs, configured essential plugins, optimized performance, and collaborated with teams to ensure a responsive, user-friendly design.',
-          image: 'https://media.istockphoto.com/id/583809524/photo/alberta-wilderness-near-banff.jpg?s=612x612&w=0&k=20&c=hiI3ib9ibDxAgqEZEH09EO3JOw94v5xh6hzcuXGhO-M=',
+          image: itsolution,
           technologies: ['WordPress'],
           demoLink: 'https://durabletechs.com/',
           codeLink: null,
@@ -162,23 +173,10 @@ export default {
           purpose: 'Create "Penh Jet Salon" website to help users find nearby salons and book makeup or massage appointments easily.',
           role: 'UX/UI Designer',
           responsibility: 'Designed clean, consistent interfaces using Figma and reviewed designs to ensure accurate final implementation.',
-          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
+          image: penhjet,
           technologies: ['Vue.js', 'Laravel', 'MySQL', 'Vuetify', 'Bootstrap', 'Tailwind', 'BootstrapVue'],
           demoLink: null,
           codeLink: 'https://github.com/vichhekachhen/G5-Penh-Jet-Salon',
-          type: 'school'
-        },
-        {
-          title: 'Laravel Project',
-          date: '1 Jun 2024 - 17 Jun 2024',
-          institution: 'PNC',
-          purpose: 'To test Facebook API functionality as my project',
-          role: 'Code Quality Manager',
-          responsibility: 'Ensured code quality by reviewing, maintaining coding standards, and guiding the team to follow best practices for clean, efficient, and maintainable code.',
-          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
-          technologies: ['Laravel', 'Facebook API', 'MySQL'],
-          demoLink: null,
-          codeLink: 'https://github.com/Cheathek/Facebook-API-C-2',
           type: 'school'
         },
         {
@@ -188,7 +186,7 @@ export default {
           purpose: 'To develop a console-based Airline Management System that applies OOP principles to manage flights, bookings, and related operations effectively.',
           role: 'Manual Testing',
           responsibility: 'Run the console application to verify each feature (e.g., does the booking system correctly update seats?).',
-          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
+          image: plan,
           technologies: ['TypeScript'],
           demoLink: null,
           codeLink: 'https://github.com/Khav9/C-5-Airline',
@@ -201,7 +199,7 @@ export default {
           purpose: 'We build the POS system helps manage sales, track items, and improve service for small to medium businesses.',
           role: 'Code Quality Manager',
           responsibility: 'As a Code Quality Manager, I ensure code meets standards, review and improve it, and help developers write clean, maintainable code.',
-          image: 'https://softwareforprojects.com/wp-content/uploads/2019/03/wordpress-project-management-plugin-themes.png',
+          image: pos,
           technologies: ['PHP', 'MySQL', 'HTML', 'CSS', 'Bootstrap'],
           demoLink: null,
           codeLink: 'https://github.com/naydany/G3-POS-SYSTEM',
@@ -214,7 +212,7 @@ export default {
           purpose: 'Design the game\'s interface and user experience to make it smooth and enjoyable.',
           role: 'UI/UX Designer',
           responsibility: 'Implemented core game mechanics and player interaction systems',
-          image: 'https://d150u0abw3r906.cloudfront.net/wp-content/uploads/2021/10/image2-2.png',
+          image: game,
           technologies: ['Algorithm'],
           demoLink: null,
           codeLink: 'https://github.com/SENRIN-SIM/game-project',
@@ -227,7 +225,7 @@ export default {
           purpose: 'To create an attractive, user-friendly gym website that helps users easily find information, sign up for memberships, and stay engaged with the gym\'s services.',
           role: 'UX/UI Designer',
           responsibility: 'As a UX/UI Designer, I create clean layouts, ensure the gym website is easy to use on all devices, and work with developers to improve the user experience.',
-          image: 'https://t3.ftcdn.net/jpg/00/50/13/40/360_F_50134069_oESZdArAXu3vkoixTdtdAfvRNj0fuVmZ.jpg',
+          image: webDesign,
           technologies: ['HTML', 'CSS', 'SASS'],
           demoLink: 'https://b6-sportclubs.vercel.app/',
           codeLink: null,
