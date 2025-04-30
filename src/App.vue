@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="notification-container user-select-none">
+      <div v-if="showRightClickAlert" class="alert-toast alert-warning">
+        Right-click is disabled on this website!
+      </div>
+    </div>
     <NavbarSection />
     <main>
       <router-view />
@@ -47,8 +52,33 @@ export default {
   },
   setup() {
     const currentYear = ref(new Date().getFullYear());
+    const showRightClickAlert = ref(false);
+    let alertTimeout = null;
+
+    onMounted(() => {
+      document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+
+        // Clear existing timeout if any
+        if (alertTimeout) {
+          clearTimeout(alertTimeout);
+        }
+
+        // Show alert
+        showRightClickAlert.value = true;
+
+        // Hide alert after 2 seconds
+        alertTimeout = setTimeout(() => {
+          showRightClickAlert.value = false;
+        }, 2000);
+
+        return false;
+      });
+    });
+
     return {
-      currentYear
+      currentYear,
+      showRightClickAlert
     };
   }
 }
@@ -79,5 +109,59 @@ section {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.notification-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  width: auto;
+  max-width: 90%;
+}
+
+.alert-toast {
+  margin-top: 40px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  animation: fadeInDown 0.5s ease, fadeOutUp 0.5s ease 4.5s;
+  backdrop-filter: blur(10px);
+  border: 1px solid;
+  min-width: 250px;
+  text-align: center;
+}
+
+.alert-warning {
+  background-color: rgba(255, 193, 7, 0.65);
+  color: #ffffff;
+  border: 1px solid rgba(255, 193, 7, 0.9);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 </style>

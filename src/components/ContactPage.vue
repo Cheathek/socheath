@@ -153,7 +153,7 @@ export default {
       };
 
       const messageText = `
-          🔔 New Contact Form Portfolio
+          🔔 New Contact From Vue Portfolio
 
       *🌟 Telegram:* @${escapeMarkdown(this.form.telegramUsername)}
       *👤 Name:* ${escapeMarkdown(this.form.name)}
@@ -213,7 +213,7 @@ export default {
 
 .alert-success {
   background-color: rgba(25, 135, 84, 0.65);
-  color: white;
+  color: #ffffff;
   border: 1px solid rgba(25, 135, 84, 0.9);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
