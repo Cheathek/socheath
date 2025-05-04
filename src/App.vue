@@ -8,6 +8,7 @@
     <NavbarSection />
     <main>
       <router-view />
+      <PageNavigation v-if="showPageNav && !$route.meta.hideFooter" />
     </main>
     <footer v-if="!$route.meta.hideFooter" class="bg-dark text-white py-4 border-top"
       style="backdrop-filter: blur(10px);">
@@ -41,48 +42,70 @@
   </div>
 </template>
 
-
 <script>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router';
 import NavbarSection from './components/NavbarSection.vue';
+import PageNavigation from './components/PageNavigation.vue';
 
 export default {
   components: {
-    NavbarSection
+    NavbarSection,
+    PageNavigation
   },
   setup() {
     const currentYear = ref(new Date().getFullYear());
     const showRightClickAlert = ref(false);
+    const showPageNav = ref(false);
     let alertTimeout = null;
+    const route = useRoute();
+
+    const checkScrollPosition = () => {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const pageHeight = document.body.offsetHeight;
+      const footerHeight = document.querySelector('footer')?.offsetHeight || 0;
+
+      // Show navigation buttons when scrolled near bottom but not in the footer
+      showPageNav.value = scrollPosition > pageHeight - footerHeight - 100;
+    };
+
+    const handleRightClick = (e) => {
+      e.preventDefault();
+      if (alertTimeout) clearTimeout(alertTimeout);
+      showRightClickAlert.value = true;
+      alertTimeout = setTimeout(() => {
+        showRightClickAlert.value = false;
+      }, 2000);
+      return false;
+    };
 
     onMounted(() => {
-      document.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
+      document.addEventListener('contextmenu', handleRightClick);
+      window.addEventListener('scroll', checkScrollPosition);
+    });
 
-        // Clear existing timeout if any
-        if (alertTimeout) {
-          clearTimeout(alertTimeout);
-        }
+    onUnmounted(() => {
+      document.removeEventListener('contextmenu', handleRightClick);
+      window.removeEventListener('scroll', checkScrollPosition);
+      if (alertTimeout) clearTimeout(alertTimeout);
+    });
 
-        // Show alert
-        showRightClickAlert.value = true;
-
-        // Hide alert after 2 seconds
-        alertTimeout = setTimeout(() => {
-          showRightClickAlert.value = false;
-        }, 2000);
-
-        return false;
-      });
+    watch(route, () => {
+      window.scrollTo(0, 0);
+      showPageNav.value = false;
+      // Check scroll position after route change in case content loads dynamically
+      setTimeout(checkScrollPosition, 500);
     });
 
     return {
       currentYear,
-      showRightClickAlert
+      showRightClickAlert,
+      showPageNav
     };
   }
 }
 </script>
+
 <style>
 section {
   padding: 100px 0;
@@ -164,4 +187,6 @@ section {
     transform: translateY(-20px);
   }
 }
+
+/* Additional styles for page navigation (will be inherited from PageNavigation.vue) */
 </style>

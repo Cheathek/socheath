@@ -13,7 +13,7 @@
           <!-- Subtitle -->
           <figure data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
             <figcaption class="blockquote-footer text-light opacity-75">
-              Web Developer & <cite class="text-white">Designer</cite>
+              I'm <cite class="text-white">Web Developer & Designer</cite>
             </figcaption>
           </figure>
 
@@ -32,11 +32,11 @@
           <div class="d-flex flex-column flex-sm-row gap-3 justify-content-start">
             <router-link to="/projects" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800"
               class="btn btn-lg px-4 px-sm-5 rounded-pill bg-white bg-opacity-10 border-white border-opacity-25 text-white backdrop-filter-blur hover-bg-opacity-25 hover-border-opacity-50 transition-all">
-              View Work
+              View Work<i class="bi bi-collection fs-5 ms-2"></i>
             </router-link>
-            <router-link to="/contact" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800"
+            <router-link to="/about" data-aos="fade-left" data-aos-delay="400" data-aos-duration="800"
               class="btn btn-lg px-4 px-sm-5 rounded-pill bg-primary bg-opacity-10 border-primary border-opacity-25 text-white backdrop-filter-blur hover-bg-opacity-25 hover-border-opacity-50 transition-all">
-              Contact Me
+              About Me<i class="bi bi-person fs-5 ms-2"></i>
             </router-link>
           </div>
         </div>

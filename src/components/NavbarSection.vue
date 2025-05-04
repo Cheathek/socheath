@@ -50,7 +50,7 @@ export default {
                 { path: '/about', name: 'About Me', icon: 'bi-person' },
                 { path: '/skills', name: 'Skills', icon: 'bi-code-slash' },
                 { path: '/projects', name: 'Projects', icon: 'bi-collection' },
-                { path: '/contact', name: 'Contact', icon: 'bi-chat-square' }
+                { path: '/contact', name: 'Contact', icon: 'bi-chat' }
             ],
             darkMode: false,
             navbarOpen: false,
