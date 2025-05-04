@@ -12,8 +12,10 @@
         <div class="col-lg-8 text-left mt-5">
           <!-- Subtitle -->
           <figure data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-            <figcaption class="blockquote-footer text-light opacity-75">
-              I'm <cite class="text-white">Web Developer & Designer</cite>
+            <figcaption
+              class="blockquote-footer typewriter-prefix fs-3 d-inline text-light opacity-90 opacity-75">
+              I'm a
+                <span ref="typewriter" class="font-monospace fw-meduim"></span>
             </figcaption>
           </figure>
 
@@ -46,12 +48,15 @@
 </template>
 
 <script>
+import Typewriter from 'typewriter-effect/dist/core';
+
 export default {
   name: 'HomePage',
   data() {
     return {
-      userName: '', // Add functionality to set userName dynamically if needed
-      timeOfDay: ''
+      userName: '',
+      timeOfDay: '',
+      roles: ['Web Developer', 'Designer', 'Problem Solver']
     };
   },
   computed: {
@@ -63,6 +68,21 @@ export default {
     // Determine the time of day
     const hour = new Date().getHours();
     this.timeOfDay = hour < 12 ? 'Morning' : hour < 18 ? 'Afternoon' : 'Evening';
+  },
+  mounted() {
+    this.initTypewriter();
+  },
+  methods: {
+    initTypewriter() {
+      new Typewriter(this.$refs.typewriter, {
+        strings: this.roles,
+        autoStart: true,
+        loop: true,
+        delay: 75,
+        deleteSpeed: 50,
+        pauseFor: 1500,
+      });
+    }
   }
 };
 </script>

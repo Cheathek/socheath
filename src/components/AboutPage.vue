@@ -10,8 +10,18 @@
         <!-- Image column (left) -->
         <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
           <div class="h-100 position-relative">
-            <img src="../assets/profile.jpg" alt="About Me"
-              class="img-fluid w-100 h-100 object-fit-cover rounded-3 shadow-lg">
+            <div class="position-relative overflow-hidden rounded-4 shadow-lg" style="padding-top: 100%;">
+              <img src="../assets/profile.jpg" alt="About Me"
+                class="img-fluid position-absolute top-0 start-0 w-100 h-100 object-fit-cover rounded-3">
+              <div class="position-absolute top-0 start-0 w-100 h-100 border-5 border-white rounded-3"
+                style="transform: rotate(2deg); opacity: 0.8;"></div>
+              <div class="position-absolute top-0 start-0 w-100 h-100 border-4 border-light rounded-3"
+                style="transform: rotate(-3deg);"></div>
+            </div>
+            <div class="position-absolute bottom-0 end-0 bg-primary rounded-circle shadow"
+              style="width: 40px; height: 40px; transform: translate(15px, 15px);"></div>
+            <div class="position-absolute top-0 start-0 bg-warning rounded-circle shadow"
+              style="width: 25px; height: 25px; transform: translate(-10px, -10px);"></div>
           </div>
         </div>
 
