@@ -9,6 +9,10 @@ lerna-debug.log*
 
 #.env files
 .env
+#assets folder
+assets
+#public folder
+public
 
 node_modules
 dist

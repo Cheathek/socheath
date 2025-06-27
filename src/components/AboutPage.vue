@@ -188,8 +188,8 @@ export default {
   methods: {
     downloadCV() {
       const link = document.createElement('a');
-      link.href = '/socheathek-mao.pdf';
-      link.setAttribute('download', 'socheathek-mao.pdf');
+      link.href = '/socheath.pdf';
+      link.setAttribute('download', 'socheath.pdf');
       document.body.appendChild(link);
       link.click();
       link.remove();
