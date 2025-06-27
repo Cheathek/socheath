@@ -97,19 +97,12 @@ export default {
         { icon: "bi bi-phone", title: "Phone", text: "086 397 836" },
         { icon: "bi bi-telegram", title: "Telegram", text: "@cheatzx" }
       ],
-
       form: {
         name: "",
         subject: "",
         message: "",
         telegramUsername: ""
       },
-
-      telegramConfig: {
-        botToken: "7842549809:AAGUKszjuUlY0l5Km6RKU_OF4XDbOuIC1Jk",
-        chatId: "5058242890"
-      },
-
       isSubmitting: false,
       buttonText: "Send Message",
       submittingText: "Sending...",
@@ -160,11 +153,15 @@ export default {
       *📝 Subject:* ${escapeMarkdown(this.form.subject)}
       *✉️ Message:* ${escapeMarkdown(this.form.message)}`;
 
+      // Use process.env directly here
+      const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+      const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
       try {
         const response = await axios.post(
-          `https://api.telegram.org/bot${this.telegramConfig.botToken}/sendMessage`,
+          `https://api.telegram.org/bot${botToken}/sendMessage`,
           {
-            chat_id: this.telegramConfig.chatId,
+            chat_id: chatId,
             text: messageText,
             parse_mode: 'MarkdownV2'
           }

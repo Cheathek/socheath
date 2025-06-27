@@ -1,5 +1,47 @@
-# Vue 3 + Vite
+# Vue 3 + Vite Portfolio Contact Project
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Requirements
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+- [Node.js](https://nodejs.org/) (version 16 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- Telegram Bot Token and Chat ID (set in a `.env` file)
+
+## Setup
+
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Create a `.env` file in the project root with the following:**
+   ```
+   VITE_TELEGRAM_BOT_TOKEN=your_bot_token_here
+   VITE_TELEGRAM_CHAT_ID=your_chat_id_here
+   ```
+
+4. **Run the development server:**
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open your browser at** [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+
+## Features
+
+- Contact form that sends messages to your Telegram via a bot
+- Responsive design using Bootstrap
+- Vue 3 + Vite for fast development
+
+## License
+
+MIT
