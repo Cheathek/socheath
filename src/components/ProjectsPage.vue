@@ -124,13 +124,13 @@
 //School project
 import webDesign from '../assets/school/webDesign.png';
 import game from '../assets/school/game.png';
-import pos from '../assets/school/pos.png'
-import plan from '../assets/school/air-plan.png'
-import penhjet from '../assets/school/penhjet.png'
+import pos from '../assets/school/pos.png';
+import plan from '../assets/school/air-plan.png';
+import penhjet from '../assets/school/penhjet.png';
 
 //company
-import itsolution from '../assets/company/itsolution.png'
-import ccd from '../assets/company/ccd.png'
+import itsolution from '../assets/company/itsolution.png';
+import ccd from '../assets/company/ccd.png';
 
 export default {
   name: 'Projects',
