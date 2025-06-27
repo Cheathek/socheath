@@ -19,19 +19,19 @@
           </div>
           <div class="col-md-6">
             <div class="d-flex justify-content-center justify-content-md-end gap-3">
-              <a href="https://github.com/cheathek" class="text-white fs-5">
-                <i class="bi bi-github" style="--bs-text-opacity: 1; color: #ffffff;"></i>
+              <a :href="githubUrl" class="text-white fs-5">
+                <i class="bi bi-github"></i>
               </a>
-              <a href="https://t.me/cheatzx" class="text-white fs-5">
+              <a :href="telegramUrl" class="text-white fs-5">
                 <i class="bi bi-telegram" style="--bs-text-opacity: 1; color: #0088CC;"></i>
               </a>
-              <a href="https://www.linkedin.com/in/socheathek-mao" class="text-white fs-5">
+              <a :href="linkedinUrl" class="text-white fs-5">
                 <i class="bi bi-linkedin" style="--bs-text-opacity: 1; color: #0A66C2;"></i>
               </a>
-              <a href="https://www.facebook.com/cheathzx" class="text-white fs-5">
+              <a :href="facebookUrl" class="text-white fs-5">
                 <i class="bi bi-facebook" style="--bs-text-opacity: 1; color: #1877F2;"></i>
               </a>
-              <a href="mailto:maosocheathek@gmail.com" class="text-white fs-5">
+              <a :href="mailtoUrl" class="text-white fs-5">
                 <i class="bi bi-envelope-fill" style="--bs-text-opacity: 1; color: #ffffff;"></i>
               </a>
             </div>
@@ -47,6 +47,12 @@ import { onMounted, ref, watch, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 import NavbarSection from './components/NavbarSection.vue';
 import PageNavigation from './components/PageNavigation.vue';
+
+const githubUrl = import.meta.env.VITE_GITHUB_URL;
+const telegramUrl = import.meta.env.VITE_TELEGRAM_URL;
+const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL;
+const facebookUrl = import.meta.env.VITE_FACEBOOK_URL;
+const email = import.meta.env.VITE_EMAIL;
 
 export default {
   components: {
@@ -100,7 +106,12 @@ export default {
     return {
       currentYear,
       showRightClickAlert,
-      showPageNav
+      showPageNav,
+      githubUrl,
+      telegramUrl,
+      linkedinUrl,
+      facebookUrl,
+      mailtoUrl: `mailto:${email}`
     };
   }
 }

@@ -59,6 +59,11 @@ public/
    ```
    VITE_TELEGRAM_BOT_TOKEN=your_bot_token_here
    VITE_TELEGRAM_CHAT_ID=your_chat_id_here
+   VITE_GITHUB_URL=your_github_url
+   VITE_TELEGRAM_URL=your_telegram_username e.g `https://t.me/your_username`
+   VITE_LINKEDIN_URL=your_linkedin_url
+   VITE_FACEBOOK_URL=your_facebook_url
+   VITE_EMAIL=your_email
    ```
 
 4. **Run the development server:**
