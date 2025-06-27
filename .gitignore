@@ -11,6 +11,7 @@ lerna-debug.log*
 .env
 #assets folder
 assets
+src/assets/
 #public folder
 public
 
